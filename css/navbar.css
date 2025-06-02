@@ -1,0 +1,270 @@
+/* Navigation Bar */
+.nav-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--flesh-tint) 100%, var(--light-brown) 100%); /* Gradient from lighter to darker */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background 0.3s ease; /* Smooth transition for hover or interaction */
+    padding: 1rem 4rem;
+    border-bottom: 0px solid var(--light-brown); /* Brown line at the bottom */
+    /*position: sticky;  Keeps the navigation bar fixed */
+    z-index: 1000;
+}
+
+
+/* Transitioning Logo Container */
+#logo-container {
+    width: 50px; /* Initial size of the logo container */
+    height: 50px;
+    margin-right: 2rem;
+    overflow: hidden;
+    border-radius: 50%; /* Circular container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--flesh-tint); /* Light flesh tint background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    border: 3px solid var(--light-brown); /* Initial lighter border */
+    transition: all 0.3s ease; /* Smooth transitions for hover */
+}
+
+/* Enlarge the circular background and update border on hover */
+#logo-container:hover {
+    width: 70px; /* Expanded size of the logo container */
+    height: 70px;
+    border: 3px solid var(--deep-flesh-tint); /* Darker border during hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    background-color: var(--light-yellow); /* Lighter yellow background on hover */
+}
+
+/* Transitioning Logo */
+#logo {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    border-radius: 50%; /* Circular image */
+    transition: transform 0.3s ease, opacity 1s ease-in-out; /* Smooth resizing and fade effects */
+    cursor: pointer;
+}
+
+/* Enlarge the logo slightly on hover */
+#logo:hover {
+    transform: scale(1.15); /* Slightly enlarge */
+}
+
+
+/* Static Logo and Name */
+.logo-container-2 {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 50px; /* Adjust size of static logo */
+    height: 50px;
+    border-radius: 50%; /* Circular logo */
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--dark-brown);
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover Effects for Name */
+.site-name:hover {
+    color: var(--brown); /* Darker brown */
+    font-size: 1.7rem; /* Slightly larger */
+}
+
+/* Tooltip Styling (Dialogue Box Aligned Below Text) */
+.site-name::after {
+    content: attr(data-tooltip); /* Add Bengali name from data attribute */
+    position: absolute;
+    top: 100%; /* Position directly below the name */
+    left: 0; /* Start at the beginning of "Mallick" */
+    background-color: var(--light-yellow); /* Light yellow background for the box */
+    color: var(--dark-brown); /* Dark brown text */
+    padding: 0.5rem 1rem; /* Spacing inside the box */
+    font-size: 1rem; /* Text size */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    white-space: nowrap; /* Prevent wrapping */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent interaction */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Tooltip on Hover */
+.site-name:hover::after {
+    opacity: 1; /* Make tooltip visible */
+    transform: translateY(5px); /* Slight downward movement for animation */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+}
+
+
+/* Menu Link Styling */
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 0.5rem;
+    color: var(--brown); /* Light brown text */
+    background-color: transparent; /* Match navbar color */
+    border-radius: 10px; /* Subtle rounded edges */
+    transition: all 0.3s ease;
+    font-size: 1rem; /* Default text size */
+}
+
+.menu-link::before {
+    content: attr(data-icon); /* Add symbols dynamically using data attributes */
+    font-size: 1.2rem; /* Symbol size slightly larger */
+    margin-right: 0rem;
+}
+
+.menu-link i {
+    font-size: 1.2rem; /* Icon size */
+}
+
+.menu-link:hover {
+    color: var(--dark-brown); /* Darker brown on hover */
+    background-color: transparent; /* Transparent background on hover */
+    font-size: 1.1rem; /* Slightly increase text size on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.menu-link.active {
+    background-color: var(--light-brown); /* Brown background on active */
+    color: var(--white); /* White text */
+}
+
+
+/* Search Container */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+/* Search Wrapper */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--brown); /* Brown border */
+    border-radius: 5px;
+    background-color: var(--light-flesh-tint); /* Light flesh-tint background */
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+/* Expanded Search Wrapper */
+.search-container.active .search-wrapper {
+    width: 300px;
+    opacity: 1;
+}
+
+/* Search Bar */
+.search-bar {
+    width: 100%;
+    border: 1px solid var(--dark-brown);
+    outline: none;
+    background-color: var(--light-gray);
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--dark-brown);
+}
+
+/* Search Icon Inside the Bar */
+.search-icon {
+    font-size: 1.2rem;
+    color: var(--brown); /* Brown color */
+    cursor: pointer;
+    position: absolute;
+    right: 10px; /* Align to the right */
+    margin-left: auto; /* Inside the search bar */
+    transition: color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--dark-brown); /* Darker brown on hover */
+    background-color: transparent; /* Transparent background on hover */
+    font-size: 1.3rem; /* Slightly increase text size on hover */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    top: 3rem; /* Position below the search bar */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--light-yellow); /* Light yellow background */
+    color: var(--dark-brown); /* Dark text */
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show Tooltip on Hover */
+.search-container:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px); /* Slight upward animation */
+}
+
+/* Tooltip Active During Search */
+.search-container.active .tooltip {
+    opacity: 1; /* Visible when active */
+    transform: translateX(-50%);
+}
+
+/* Highlight Matches */
+.highlight {
+    background-color: var(--light-yellow);
+    color: var(--dark-brown);
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+/* Current Match */
+.current-match {
+    border: 2px solid var(--golden-yellow);
+}
+
+/* Navigation Button (Next Icon) */
+.next-icon {
+    font-size: 1.2rem;
+    color: var(--brown);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    margin-right: 10px;
+    display: none;
+}
+

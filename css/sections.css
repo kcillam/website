@@ -1,0 +1,371 @@
+/* Smooth Scrolling Effect for Section Arrow */
+.section-arrow {
+    margin-top:2rem;
+    display: block;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    clear: both; /* Clears any floated or flexbox content */
+}
+
+.section-arrow a {
+    text-decoration: none;
+    color: var(--dark-brown);
+    transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
+
+.section-arrow i {
+    font-size: 3rem; /* Adjust size of the arrow */
+    display: inline-block;
+    transition: transform 0.2s ease; /* Smooth hover scaling */
+}
+
+.section-arrow a:hover i {
+    animation: bounce 1.5s ease-in-out; /* Add bounce on hover */
+}
+
+/* Section Header */
+.section-header {
+    
+    position: sticky;  /*Stays visible while scrolling */
+    top: 120px;  /*Below the navbar */
+    left: 0;
+    right: 0;
+    flex: 0 0 15%;
+    margin-left: 0rem;
+    margin-right: 3rem;
+    text-align: center;
+    font-size: 1.3rem; /* Default size */
+    font-weight: 600; /* Slightly bolder text */
+    color: var(--brown); /* Dark brown */
+    background-color: transparent; /* No background color */
+    line-height: 0; /* Eliminate extra space below text */
+    z-index: 900; /* Keep above content */
+    display: inline-block; /* For alignment with the line */
+    cursor: pointer; /* Show pointer on hover */
+    transition: color 0.3s ease, font-size 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover Effect for Section Header */
+.section-header:hover {
+    color: var(--dark-brown); /* Change text color to golden yellow on hover */
+    font-size: 1.5rem; /* Slightly enlarge text */
+}
+
+/* Golden Line Below Section Header */
+.section-header::after {
+    content: ''; /* Add the golden line dynamically */
+    position: absolute;
+    bottom: 0; /* Align line at the bottom of the header */
+    left: 0; /* Start from the left */
+    width: 0; /* Initially hidden */
+    height: 4px; /* Line thickness */
+    background-color: var(--dark-brown); /* Golden line color */
+    transition: width 0.5s ease; /* Smooth animation for line growth */
+}
+
+/* Extend Line on Hover */
+.section-header:hover::after {
+    width: 100%; /* Fully extend the line across the header */
+}
+
+/* Retract Line When Hover Ends */
+.section-header:not(:hover)::after {
+    width: 0; /* Retract the line when hover ends */
+}
+
+/* Section Titles */
+.section-title {
+    position: relative; /* Align with section content */
+    top: 0; /* Adjust positioning */
+    left: 5%; /* Left-align the title */
+    font-size: 1rem; /* Slightly smaller font size */
+    font-weight: 400; /* Regular font weight */
+    color: var(--dark-brown); /* Dark brown text */
+    padding: 0.2rem 0.5rem; /* Smaller padding for a cleaner look */
+    z-index: 900; /* Ensure it appears above section content */
+}
+
+/* Section Content */
+.section {
+    /*background-color: #FFFFFF;*/
+    min-height: auto;
+    padding: 4rem 2rem; /* Adjust padding for better spacing */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align content to the left */
+    position: relative;
+}
+
+.section p {
+    flex:1;
+    display: block;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 1rem 0; /* Add spacing between paragraphs */
+    text-align: left; /* Align text to the left */
+    color: var(--dark-brown);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.section-divider {
+    width: 100%;
+    border-top: 1px solid var(--dark-gray);
+    margin: 2rem 0; /* Spacing above and below the line */
+}
+
+
+
+/* Social Media Icon Backgrounds */
+.google-scholar {
+    background-image: url('../images/graduation_2.png'); /* Updated Scholarly Icon */
+    background-size: 80%;
+}
+
+.linkedin {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/174/174857.png');
+}
+
+.email {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/732/732200.png');
+}
+
+.github {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/733/733553.png');
+}
+
+.instagram {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2111/2111463.png');
+}
+
+.facebook {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/124/124010.png');
+}
+
+#research {
+    display: flex; /* Align section-header and research-container side by side */
+    justify-content: space-between; /* Distribute content horizontally */
+    align-items: flex-start; /* Align content to the top */
+    gap: 2rem; /* Space between section-header and research-container */
+    position: relative; /* Ensure section-arrow respects layout flow */
+}
+/* Left Side (Research Heading and Description) */
+.research-description {
+    flex: 1; /* Take available space on the left */
+    max-width: 50%; /* Limit the width of the description */
+}
+
+/* Right Side (Research Container) */
+.research-container {
+    top: 0rem;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column; /* Stack preprints, papers, and projects vertically */
+    gap: 0rem; /* Add spacing between sections */
+    width: 100%; /* Ensure it spans the full width */
+    overflow: visible;
+    position:relative; /* Ensure it respects child element heights */
+    /*background-color: rgba(255, 0, 0, 0.1); */
+}
+
+
+.research-container::after {
+    content: "";
+    display: block;
+    clear: both;  /*Clear any potential floating elements */
+}
+
+/* Individual Sections (Preprints, Papers, Projects) */
+.preprints, .papers, .projects {
+    display: block;
+    width: 100%; /* Ensure each section spans the container width */
+    position: relative;
+    overflow: visible;
+    height: auto;
+}
+
+.preprints h3, .papers h3, .projects h3 {
+    color: var(--dark-brown); /* Theme color for headings */
+    margin-bottom: 1rem; /* Add spacing below the heading */
+}
+
+.research-container ol {
+    list-style: decimal;
+    padding-left: 1.5rem; /* Ensures numbering visibility */
+    margin-right: 2rem;
+    font-size: 1.05rem;
+}
+
+.research-container ol > li {
+    margin-bottom: 1.4rem;
+    line-height: 1.6;
+    background: none; /* Removes white background */
+    border: none; /* Removes card border */
+    box-shadow: none; /* Removes shadow */
+    padding: 0; /* Removes padding from previous card style */
+}
+
+.research-container h3 {
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+}
+
+.research-container strong {
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Publication Card Styling */
+.publication-card {
+    position:relative;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the card */
+    margin: 10px 0; /* Space between cards */
+    background-color: #f9f9f9; /* Card background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Ensure block layout */
+    width: 100%; /* Full width */
+}
+
+.subsection-title {
+    display: inline-block;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0; /* initially hidden */
+    height: 3px;
+    background-color: var(--dark-brown);
+    transition: width 0.3s ease;
+}
+
+.subsection-title:hover::after {
+    width: 100%; /* underline appears smoothly upon hover */
+}
+
+
+
+/* Title Styling */
+.publication-card h4 {
+    color: #333;
+    margin: 0 0 8px; /* Margin below the title */
+}
+
+/* Author List Styling */
+.author-list {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.author-list a {
+    color: #005eff;
+    text-decoration: none;
+}
+
+.author-list a:hover {
+    text-decoration: underline;
+}
+
+/* Venue Styling for Papers */
+.publication-venue {
+    font-size: 1.05rem;
+    color: #777;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.pub-year {
+    font-size: 1rem;
+    color: var(--brown);
+}
+
+/* Access Links */
+.publication-access {
+    color: var(--dark-brown); /* consistent color, no blue links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.publication-access:hover {
+    color: var(--brown);
+}
+
+.title-link {
+    text-decoration: none;
+    color: var(--brown);
+    transition: color 0.3s ease;
+}
+
+.title-link:hover {
+    color: var(--dark-brown);
+}
+
+.arxiv-link {
+    transition: font-size 0.3s ease;
+    display: inline-block;
+}
+
+.arxiv-link:hover {
+    font-size: 1.15rem; /* Slightly larger on hover */
+}
+
+
+.arxiv-code {
+    font-style: italic;
+    color: var(--light-brown); /* Distinct, softer color */
+    margin-right: 0.3rem;
+}
+
+.talks-list {
+    padding-left: 1.2rem;
+}
+
+.talks-list > .talk-item {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.talk-title-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.talk-title {
+    font-size: 1.1rem; /* slightly larger title */
+    color: var(--brown);
+}
+
+.talk-date {
+    color: var(--dark-gray);
+    font-size: 0.95rem;
+}
+
+.talk-sublist {
+    padding-left: 1.5rem;
+    font-size: 0.95rem; /* reduces nested numbering font */
+}
+
+.venue-date {
+    float: right;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}

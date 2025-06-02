@@ -1,0 +1,249 @@
+/* ----------------- responsive.css ----------------- */
+/* ----------------- Tablet adjustments (up to 1024px) ----------------- */
+/* Tablet adjustments (screens ≤ 1024px) */
+@media screen and (max-width: 1024px) {
+
+    /* Navbar: same as mobile (icon-only, stacked, no search) */
+    .nav-bar {
+      flex-direction: column !important;
+      padding: 0.5rem 0.5rem !important; /* slim padding */
+      gap: 1rem !important;
+    }
+    /* Hide menu-link text, keep only <i> icons */
+    .menu-link {
+      font-size: 0 !important;      /* remove label text */
+      padding: 0.4rem !important;    /* keep tappable area */
+    }
+    .menu-link i {
+      font-size: 1.3rem !important;  /* visible icon size */
+      color: var(--brown) !important;
+    }
+    .menu-link:hover i {
+      color: var(--dark-brown) !important;
+    }
+    /* Hide search bar/icon */
+    .search-container {
+      display: none !important;
+    }
+  
+    /* “Home” section: stack under navbar, remove fixed 100vh */
+    .home {
+      flex-direction: column !important;
+      height: auto !important;
+      padding-top: 8rem !important; /* leave room for navbar */
+    }
+    /* Shrink photo slightly for tablet */
+    .profile-photo {
+      width: 250px !important;
+      height: 250px !important;
+    }
+    /* About Me → full width under photo */
+    .about-container {
+      width: 90% !important;
+      margin: 1rem auto !important;
+    }
+    .about-container p {
+      font-size: 1rem !important;
+      line-height: 1.5 !important;
+      text-align: justify;
+    }
+
+    .section-arrow {
+        display: none !important;
+    }
+  }
+
+  
+  
+/* Responsive adjustments for screens ≤ 768px */
+@media screen and (max-width: 768px) {
+
+    /* 1. General body margins (reduce horizontal space) */
+    body {
+        margin: 0.7rem 1rem; /* was 0.5rem 4rem */
+    }
+
+    /* 2. Navbar: stack items vertically and slim padding */
+    .nav-bar {
+        flex-direction: column;          
+        padding: 0.5rem 0.5rem !important; /* was 1rem 4rem */
+        gap: 1rem;                     
+    }
+
+    /* 3. Logo and site name: pull closer together */
+    #logo-container {
+        margin-right: 0.5rem !important; /* was 2rem */
+    }
+    .site-logo {
+        margin-right: 0.3rem !important; /* was 10px */
+    }
+
+    /* 4. Navbar links: hide text, keep only the <i> icons */
+    .menu-link {
+        font-size: 0 !important;     /* hide label text */
+        padding: 0.4rem !important;  /* maintain tappable area */
+    }
+    .menu-link i {
+        font-size: 1.3rem !important;   /* readable icon size */
+        color: var(--brown) !important;
+    }
+    .menu-link:hover i {
+        color: var(--dark-brown) !important;
+    }
+
+    /* 5. Hide search bar/icon entirely */
+    .search-container {
+        display: none !important;
+    }
+
+    /* 6. “Home” section: force content below the taller navbar */
+    .home {
+        flex-direction: column;          
+        padding-top: 8rem !important;   /* push content down */
+        height: auto;                   
+    }
+
+    /* 7. Shrink the photo and social icons */
+    .profile-photo {
+        width: 200px !important;   
+        height: 200px !important;  
+    }
+    .social-button {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    /* 8. About Me title: slightly smaller */
+    .about-title {
+        font-size: 1.5rem !important;  
+    }
+    .about-title:hover {
+        font-size: 1.6rem !important;  
+    }
+
+    /* 9. About Me paragraphs: smaller font, reduced spacing */
+    .about-container {
+        width:90%;
+        margin: 0rem auto !important;    /* was margin-bottom: 2rem */
+        padding: 0rem !important;
+    }
+    .about-container h2 {
+        margin-bottom: 0.8rem !important; /* was 1rem */
+    }
+    .about-container p {
+        margin-bottom: 1rem !important; /* was 1rem */
+        font-size: 0.85rem !important;    /* was 1rem */
+        text-align: justify;
+    }
+
+    /* 10. Insert a divider after “About Me” via CSS pseudo‐element */
+    /*    (If you prefer, you can also insert <div class="section-divider"></div> in HTML.) */
+    .about-container::after {
+        content: '';
+        display: block;
+        border-top: 1px solid var(--dark-gray);
+        margin: 0rem 0rem;  /* spacing above and below the line */
+    }
+
+    /* 11. Hide the section‐arrow chevrons */
+    .section-arrow {
+        display: none !important;
+    }
+
+    /* 12. Sections (Research, Talks, Teaching): stack vertically */
+    .section {
+        flex-direction: column !important;   
+        padding: 0rem 0.5rem !important;      
+    }
+
+    /* 13. Section headers (icon + text): center‐aligned, smaller */
+    .section-header {
+        position: relative !important;       /* remove sticky offset */
+        top: auto !important;
+        margin-bottom: 0rem !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1rem !important;             /* space between icon and text */
+        width: 100% !important;             /* full width */
+        font-size: 1.05rem !important;        /* slightly smaller than desktop */
+    }
+    .section-header h2 {
+        margin: 0;                           /* remove extra default margin */
+    }
+
+
+
+    /* 14. Shrink icon sizes for Research & Teaching */
+    #microscope, #book {
+        font-size: 1.5rem !important;        /* was ~2.5rem on desktop */
+    }
+    /* “Talks” icon (#chalkboard) was okay, but if needed: */
+    #chalkboard {
+        font-size: 1.8rem !important;        /* keep slightly larger than others */
+    }
+
+    /* 15. Research / Talks / Teaching containers: full width */
+    .research-container,
+    .talks-container,
+    .teaching-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .teaching-container p {
+        font-size: 0.8rem !important;
+        line-height: 1 !important;
+      }
+
+    /* 16. Shrink fonts and spacing within Research lists */
+    .subsection-title {
+        font-size: 1.3rem !important;        /* was 1.6rem */
+    }
+    .research-container ol,
+    .talks-list {
+        padding-left: 1rem !important;       /* was 1.5rem */
+    }
+    .research-container ol > li {
+        font-size: 0.95rem !important;       /* was ~1.05rem */
+        margin-bottom: 1rem !important;      /* was 1.4rem */
+    }
+    .publication-venue {
+        font-size: 0.9rem !important;        /* was 1.05rem */
+    }
+
+    /* 17. Talks list: shrink titles and dates */
+    .talk-title {
+        font-size: 1rem !important;          /* was 1.1rem */
+    }
+    .talk-date,
+    .venue-date {
+        font-size: 0.85rem !important;       /* was 0.95rem / 0.9rem */
+    }
+    .author-list,
+    .organiser-name {
+        font-size: 0.85rem !important;       /* was 0.9–0.95rem */
+    }
+
+    /* Hide the year in Preprints */
+.pub-year {
+    display: none !important;
+}
+
+
+    /* 18. Footer: shrink icons and text */
+    .footer-bar {
+        padding: 0.4rem 0 !important;       /* was 0.6rem 0 */
+        gap: 0.3rem !important;              
+    }
+    .footer-container {
+        gap: 0.8rem !important;             
+    }
+    .footer-icon {
+        width: 28px !important;              /* was 32px */
+        height: 28px !important;             
+    }
+    .footer-copyright {
+        font-size: 0.75rem !important;       /* was 0.8rem */
+    }
+}

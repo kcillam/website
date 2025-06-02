@@ -1,0 +1,18 @@
+:root {
+    --white: #FFFFFF; /* Pure white */
+    --light-gray: #E9E8E8; /* Light gray */
+    --gray-flesh-tint:  #b0a29c;
+    --dark-gray: #808080; /* Dark gray */
+    --flesh-tint: #F4D1C1;  /*Flesh tint */
+    /*--flesh-tint: #F6D7CC;*/
+    --eggshell: #F0EAD6;
+    --beige: #F5F5DC;
+    --deep-flesh-tint: #d7a592; /* Deeper flesh tint */
+    --deep-flesh-gray: #D9B1A3; /* Flesh tint mixed with gray and brown */
+    --light-yellow: #FBE8B5; /* Light faded yellow */
+    --golden-yellow: #FFD700; /* Golden yellow */
+    --yellow-brown: #e1a147; /* Deep yellow with a tinge of brown */
+    --light-brown: #a17350; /* Light brown */
+    --brown: #724b2d; /* Light brown */
+    --dark-brown: #523227; /* Dark brown */
+}

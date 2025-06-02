@@ -1,0 +1,198 @@
+/* Keyframes for Bounce Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0%) translateY(0);
+    }
+    40% {
+        transform: translateX(0%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(0%) translateY(-5px);
+    }
+}
+
+/* Beaker and Smoke Animation */
+.beaker-container {
+    position: relative;
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 2rem;
+    color: var(--brown);
+}
+
+/* Beaker Icon Styling */
+.beaker-container i {
+    font-size: 3rem; /* Make the beaker icon larger */
+    color: var(--dark-brown); /* Golden yellow */
+}
+
+/* Smoke Animation */
+.smoke {
+    position: absolute;
+    top: -30px; /* Position smoke above the beaker */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem; /* Space between smoke circles */
+}
+
+.smoke .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Circular smoke */
+    background-color: #F5CBA7; /* Light smoke color */
+    opacity: 0;
+    animation: rise 3s infinite ease-in-out; /* Rising smoke animation */
+}
+
+/* Delay animations for each circle */
+.smoke .circle:nth-child(1) {
+    animation-delay: 0s;
+}
+.smoke .circle:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.smoke .circle:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Microscope Container */
+.microscope-container {
+    display: flex;
+    justify-content: center; /* Align to the left */
+    margin-top: 1rem; /* Space below the golden line */
+    margin-bottom: 3rem;
+    font-size: 3rem; /* Microscope icon size */
+    color: var(--brown); /* Golden yellow */
+    animation: microscope-move 2s ease-in-out infinite paused; /* Initially paused */
+    /*animation-play-state: paused;  Prevent animation until hover */
+}
+
+.microscope-container:hover {
+    color: var(--dark-brown); /* Darker brown for visibility */
+}
+
+#microscope {
+    font-size: 2.5rem;
+    color: var(--brown);
+    animation: microscope-move 2s ease-in-out infinite paused; /* Initially paused */
+}
+
+/* Microscope Animation Keyframes */
+@keyframes microscope-move {
+    0% {
+        transform: rotate(0deg); /* Default position */
+    }
+    25% {
+        transform: rotate(10deg); /* Slight tilt right */
+    }
+    50% {
+        transform: rotate(-10deg); /* Slight tilt left */
+    }
+    75% {
+        transform: rotate(6deg); /* Minor correction */
+    }
+    100% {
+        transform: rotate(0deg); /* Back to default */
+    }
+}
+
+.teaching-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; /* Adjust icon size */
+    color: var(--brown); /* Initial color */
+    animation: teaching-move 2s ease-in-out infinite paused; /* Initially paused */
+    cursor: pointer; /* Interactive cursor */
+}
+
+.teaching-container:hover {
+    color: var(--dark-brown);
+}
+
+#book {
+    font-size: 2.5rem;
+    color: var(--brown);
+    animation: teaching-move 1.5s ease-in-out infinite paused; /* Initially paused */
+}
+
+/* Keyframes for Teaching Animation */
+@keyframes teaching-move {
+    0% {
+        content: "\f02d"; /* Font Awesome Closed Book */
+    }
+    33% {
+        content: "\f518"; /* Font Awesome Half Opened Book */
+    }
+    66% {
+        content: "\f518"; /* Font Awesome Fully Open Book */
+    }
+    100% {
+        content: "\f02d"; /* Back to Closed Book */
+    }
+}
+
+
+/* Talks Container */
+.talks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; /* Adjust icon size */
+    color: var(--brown); /* Initial color */
+    animation: talks-move 2s ease-in-out infinite paused; /* Initially paused */
+    cursor: pointer; /* Interactive cursor */
+}
+
+/* Talks Icon Inside Container */
+.talks-container i {
+    animation: talks-move 1.5s ease-in-out infinite paused; /* Initially paused */
+}
+
+/* Hover Effect for Talks */
+.talks-container:hover i {
+    color: var(--dark-brown); /* Darker color on hover */
+}
+
+#chalkboard {
+    font-size: 2.5rem;
+    color: var(--brown);
+    animation: talks-move 1.5s ease-in-out infinite paused; /* Initially paused */
+}
+
+/* Keyframes for Talks Animation */
+/* Talks Animation Keyframes */
+@keyframes talks-move {
+    0% {
+        content: "\f5ef"; /* Man with no hands */
+    }
+    25% {
+        content: "\f5ef"; /* Simulated Left Hand Raised */
+        transform: translateX(-5px); /* Slight shift to mimic left hand raised */
+    }
+    50% {
+        content: "\f5ef"; /* Simulated Right Hand Raised */
+        transform: translateX(5px); /* Slight shift to mimic right hand raised */
+    }
+    100% {
+        content: "\f5ef"; /* Back to Man with no hands */
+    }
+}
+
+
+
+/* Smoke Rising Animation */
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(0.8); /* Start small */
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-40px) scale(1.2); /* Rise and grow larger */
+        opacity: 0;
+    }
+}
