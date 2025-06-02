@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Mallick</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/website-logo-circular.png" type="image/png"> <!-- Favicon -->
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <img id="loading-logo" src="images/website-logo-transition/8.png" alt="Loading Logo" />
+    </div>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="nav-bar">
+           <!-- Transitioning Logo -->
+        
+
+            <!-- Static Logo and Name -->
+            <div class="logo-container-2">
+                <div id="logo-container">
+                    <img id="logo" src="images/website-logo-transition/8.png" alt="Website Logo" />
+                </div>
+                <span class="site-name" data-tooltip="Pronunciation: So-home | Bengali: সোহম মল্লিক">Soham Mallick</span>
+            </div>
+
+            <ul class="nav-links">
+                <li class="search-container">
+                    <i class="fas fa-search search-icon"></i> <!-- Search Icon Outside -->
+                    <div class="search-wrapper">
+                        <input type="text" class="search-bar" placeholder="Search..." />
+                    </div>
+                    <div class="tooltip">Search</div> <!-- Tooltip for State Updates -->
+                </li>
+                <li><a href="#home" class="menu-link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#research" class="menu-link"><i class="fas fa-microscope"></i> Research</a></li>
+                <li><a href="#teaching" class="menu-link"><i class="fas fa-book"></i> Teaching</a></li>
+                <li><a href="#talks" class="menu-link"><i class="fas fa-chalkboard-teacher"></i> Talks</a></li>
+                <!--<li><a href="#contact" class="menu-link"><i class="fas fa-envelope"></i> Contact</a></li>-->
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+       <section id="home" class="home">
+    <!-- Photo Container -->
+    <div class="photo-container">
+        <img src="images/me-jaipur-2.jpg" alt="Soham Mallick" id="profile-photo" class="profile-photo">
+        <!--<span class="tooltip">Clicked at the Wissahickon Park, Philadelphia</span>   -->
+        <div class="social-media">
+            <a href="https://scholar.google.com/citations?user=jDzhS4cAAAAJ&hl=en" class="social-button google-scholar" aria-label="Google Scholar"></a>
+            <a href="https://www.linkedin.com/in/soham-mallick" class="social-button linkedin" aria-label="LinkedIn"></a>
+            <a href="mailto:kcillam@wharton.upenn.edu" class="social-button email" aria-label="Email"></a>
+            <a href="https://github.com/soham-penn" class="social-button github" aria-label="GitHub"></a>
+            <!--<a href="https://www.instagram.com/kcillam_mahos/" class="social-button instagram" aria-label="Instagram"></a>
+            <a href="https://www.facebook.com/kcillam.mahos" class="social-button facebook" aria-label="Facebook"></a>
+            -->
+        </div>
+    </div>
+
+    <!-- About Me Container -->
+    <div class="about-container">
+        <h2 class="about-title">About Me</h2>
+        <p>
+            I am a second year PhD student in the &nbsp;<a href="https://statistics.wharton.upenn.edu/programs/phd/"><em>Department of Statistics and Data Science</em></a>&nbsp; at the <strong>Wharton School of the University of Pennsylvania</strong>. 
+            My broad research interests are in the fields of <em>Causal Inference (CI)</em> and <em>Machine Learning (ML)</em>. 
+            I am interested in non-parametric identification and doubly robust estimation problems in CI. 
+            In ML, I am motivated by high-dimensional statistical and reinforcement learning problems, particularly when dealing with Large Language Models. 
+            I am fortunate to be jointly advised by Professor &nbsp;<a href="https://statistics.wharton.upenn.edu/profile/ett/"><strong>Eric J. Tchetgen Tchetgen</strong></a>&nbsp; and Professor &nbsp;<a href="https://statistics.wharton.upenn.edu/profile/dobriban/"><strong> Edgar Dobriban</strong></a>.</p>
+        
+        <p>
+            Before starting my Ph.D., I did my Bachelors and Masters at the <a href ="https://www2.isical.ac.in/"><strong>Indian Statistical Institute, Kolkata</a></strong>. I completed my Master's Dissertation under Prof. &nbsp;<a href="https://sites.stat.columbia.edu/bodhi/Bodhi/Welcome.html"><em> Bodhisattva Sen</em></a>&nbsp; at 
+            <strong>Columbia University</strong>, on the topic of <em>Optimal Transportation</em>. During my Masters, I also worked on <em>shape-constrained</em> regression problems as a Summer Research Intern at 
+            <strong>Carnegie Mellon University</strong> under the mentorship of Prof. &nbsp;<a href ="https://arun-kuchibhotla.github.io/"><em>Arun Kuchibhotla</em></a>.
+        </p>
+        
+        <p>
+            Beyond statistics, I enjoy playing and following chess and badminton, and solving Rubik's cubes.
+        </p>
+        
+    </div>
+<br><br>
+    <!-- Section Arrow -->
+    <div class="section-arrow">
+        <a href="#research" class="arrow-link">
+            <i class="fa solid fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+
+
+        <!-- Research Section -->
+        <section id="research" class="section research">
+            <div class="section-header">
+                <!-- <div class="beaker-container">
+                    <i class="fas fa-flask"></i> 
+                    <div class="smoke">
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                    </div>
+                </div>
+            -->
+
+                <div class="microscope-container" id="microscope">
+                    <i class="fas fa-microscope"></i> <!-- Microscope Icon -->
+                </div>
+                
+                <h2>Research</h2>
+            </div>
+
+            <div class="research-container">
+            
+                <!-- Preprints Section -->
+                <div class="preprints">
+                    <h3 class="subsection-title">Preprints/Submitted Articles</h3>
+                    <ol>
+                        <li>
+                            <strong><a href="https://arxiv.org/abs/2505.19371" class="title-link">Foundations of Top-<i>k</i> Decoding For Language Models</a></strong> <span class="pub-year">(2025)</span><br>
+                            <span class="author-list">G Noarov*, S Mallick*, T Wang*, S Joshi, Y Sun, Y Xie, M Yu, E Dobriban</span><br>
+                            <a class="publication-access" href="https://arxiv.org/pdf/2505.19371">
+                                <em class="arxiv-code">arXiv:2505.19371</em> | <span class="arxiv-link">arXiv Link</span>
+                            </a>
+                        </li>
+                        <li>
+                            <strong><a href="https://arxiv.org/abs/2310.20058" class="title-link">New Asymptotic Limit Theory and Inference for Monotone Regression</a></strong> <span class="pub-year">(2023)</span><br>
+                            <span class="author-list">S Mallick, S Sarkar, AK Kuchibhotla</span><br>
+                            <a class="publication-access" href="https://arxiv.org/pdf/2310.20058">
+                                <em class="arxiv-code">arXiv:2310.20058</em> | <span class="arxiv-link">arXiv Link</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+                
+                <!--
+                <div class="papers">
+                    <h3 class="subsection-title">Papers</h3>
+                    <ol>
+                        <li>
+                            <strong><a href="#" class="title-link">Title of Paper 1</a></strong>, <span class="pub-year">(2024)</span><br>
+                            <span class="author-list">Author 1, Author 3</span><br>
+                            <span class="publication-venue"><em>Journal of Statistical Research</em></span><br>
+                            <a class="publication-access" href="#">
+                                <span class="paper-link">Journal Link</span>
+                            </a>
+                        </li>
+                        <li>
+                            <strong><a href="#" class="title-link">Title of Paper 2</a></strong>, <span class="pub-year">(2023)</span><br>
+                            <span class="author-list">Author 2, Author 4</span><br>
+                            <span class="publication-venue"><em>Conference on Machine Learning</em></span><br>
+                            <a class="publication-access" href="#">
+                                <span class="paper-link">Conference Link</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            
+                
+                <div class="projects">
+                    <h3 class="subsection-title">Projects</h3>
+                    <ol>
+                        <li>
+                            <strong><a href="#" class="title-link">Title of Project 1</a></strong><br>
+                            <span class="author-list">Collaborator 1, Collaborator 2</span><br>
+                            <a class="publication-access" href="#">
+                                <span class="project-link">Project Details</span>
+                            </a>
+                        </li>
+                        <li>
+                            <strong><a href="#" class="title-link">Title of Project 2</a></strong><br>
+                            <span class="author-list">Collaborator 3, Collaborator 4</span><br>
+                            <a class="publication-access" href="#">
+                                <span class="project-link">Project Details</span>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            -->
+        </div>
+       
+        <!--
+        <div class="section-arrow">
+            <a href="#talks" class="arrow-link">
+                <i class="fa solid fa-chevron-down"></i>
+            </a>
+        </div>
+        -->  
+        
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="section teaching">
+            <div class="section-header">
+                <div id="book" class="microscope-container">
+                    <i class="fas fa-book"></i> <!-- Book Icon -->
+                </div>
+                <h2>Teaching</h2>
+            </div>
+            <div class="research-container">
+            
+                 <p>I was a Graduate Teaching Assistant for the following courses:</p>
+                 <ol>
+                    <li>
+                        <strong> Fall 2024 </strong>: STAT 5350/7110 - Forecasting Methods for Management <br>
+                        <span class="author-list"><em>Instructor</em>: Professor Robert Stine</span><br>
+                        <span class="publication-venue"><em>The Wharton School, University of Pennsylvania</em></span><br>
+                    </li>
+                 </ol>
+            
+            </div>
+            <!--
+            <div class="section-arrow">
+                <a href="#contact">↓</a>
+            </div>
+            -->
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Talks Section -->
+        <section id="talks" class="section talks">
+            <div class="section-header">
+                <div class="icon-container">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <h2>Talks</h2>
+            </div>
+        
+            <div class="talks-container">
+                <ol class="talks-list">
+                    <li class="talk-item">
+                        <div class="talk-title-date">
+                            <strong class="talk-title">Inference for Monotone Regression</strong>
+                            <span class="talk-date">Jul ’23</span>
+                        </div>
+                        <div class="talk-description">
+                            Presented at the Departments of Statistics in the following Universities:
+                        </div>
+                        <ol class="talk-sublist">
+                            <li>
+                                <span class="publication-venue"><em>Carnegie Mellon University</em></span>
+                                <!--<span class="venue-date">17th July, 2023</span><br>
+                                <span class="author-list">Hosted by: Prof. Larry Wasserman & Prof. Arun Kumar Kuchibhotla</span>-->
+                            </li>
+                            <li>
+                                <span class="publication-venue"><em>University of Pennsylvania</em></span>
+                                <!--<span class="venue-date">27th July, 2023</span><br>
+                                <span class="author-list">Hosted by: Prof. Edward George</span>-->
+                            </li>
+                            <li>
+                                <span class="publication-venue"><em>Columbia University</em></span>
+                                <!--<span class="venue-date">28th July, 2023</span><br>
+                                <span class="author-list">Hosted by: Prof. Bodhisattva Sen</span>-->
+                            </li>
+                        </ol>
+                        <div class="talk-additional-info">
+                            <a class="publication-access" href="https://drive.google.com/file/d/1jPgCpmP3Hz4B03758TF4sm-ZuwCZwWBf/view">
+                                 <span class="arxiv-code">Slides</span>
+                            </a>
+                            &nbsp;|&nbsp;
+                            <a class="publication-access" href="https://drive.google.com/file/d/1qnCbHUj5sxGFsLxFraxLahcD9chFWSXo/view">
+                                <span class="arxiv-code">Abstract</span>
+                            </a>
+                        </div>
+                    </li>
+        
+                    <li class="talk-item">
+                        <div class="talk-title-date">
+                            <strong class="talk-title">D. Basu Gold Medal Award</strong>
+                            <span class="talk-date">Dec ’22</span>
+                        </div>
+                        <div class="talk-description">
+                            Presented a talk on <em>Uniform Manifold Approximation & Projection</em>, as a dimension reduction tool.<br>
+                            <span class="publication-venue">Indian Statistical Institute, Kolkata</span><br>
+                            <a class="publication-access" href="https://drive.google.com/file/d/1kObLQzkstYXkyPL43njxaeip6WV-nNNj/view">
+                                 <span class="arxiv-code">Slides</span>
+                            </a>
+                            &nbsp;|&nbsp;
+                            <a class="publication-access" href="https://drive.google.com/file/d/1DBuDCd_5kdgp6GV4TjaEp1yHnzzXfsvl/view">
+                                 <span class="arxiv-code">Abstract</span>
+                            </a>
+                        </div>
+                    </li>
+        
+                    <li class="talk-item">
+                        <div class="talk-title-date">
+                            <strong class="talk-title">Symposium on Combinatorics & Probability</strong>
+                            <span class="talk-date">Apr ’22</span>
+                        </div>
+                        <div class="talk-description">
+                            Presented a joint talk on the Lovász Local Lemma and the Moser-Tardos Algorithm.<br>
+                            <span class="publication-venue">Indian Institute of Science, Bangalore</span><br>
+                            <a class="publication-access" href="https://drive.google.com/file/d/1RZNs5N90dJ_mLQRCfB8FHN83dc9obOm4/view">
+                                <span class="arxiv-code">Slides</span>
+                            </a>
+                            &nbsp;|&nbsp;
+                            <a class="publication-access" href="https://www.youtube.com/watch?v=E12oH_6mWOU">
+                                 <span class="arxiv-code">Video</span>
+                            </a><br>
+                            
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        
+        
+        
+            <!--
+            <div class="section-arrow">
+                <a href="#teaching" class="arrow-link">
+                    <i class="fa solid fa-chevron-down"></i>
+                </a>
+            </div>
+            -->
+        </section>
+
+
+        <!-- Contact Section 
+        <section id="contact" class="section contact">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <div class="section-bar"></div>
+            </div>
+            <p>
+                Feel free to reach out at: <a href="mailto:kcillam@wharton.upenn.edu">kcillam@wharton.upenn.edu</a>
+            </p>
+        </section>
+        -->
+    </main>
+
+    <footer class="footer-bar">
+        <div class="footer-container">
+            <a href="mailto:kcillam@wharton.upenn.edu" class="footer-icon email-icon" aria-label="Email"></a>
+            <a href="https://github.com/soham-mallick" class="footer-icon github-icon" aria-label="GitHub"></a>
+            <a href="https://www.linkedin.com/in/soham-mallick" class="footer-icon linkedin-icon" aria-label="LinkedIn"></a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2025 Soham Mallick
+        </div>
+    </footer>
+    
+
+<!-- Link to your JavaScript file -->
+<script src="script/animation.js"></script>
+<script src="script/logo_animation.js"></script>
+<script src="script/loading-animation.js"></script>
+<script src="script/search-bar.js"></script>
+
+</body>
+</html>
