@@ -1,0 +1,14 @@
+# General settings used by build.py.
+
+# Your name exactly as it appears in author lists; it is shown in bold there.
+name = "Soham Mallick"
+
+# Link to your CV. Leave empty ("") to hide the CV links.
+# To show them: put the PDF in a folder called files/ and set, for example:
+#   cv = "files/cv.pdf"
+cv = ""
+
+# Visit counter shown at the bottom of the page (GoatCounter, no cookies).
+# Leave empty ("") for no counter. To switch it on, put your GoatCounter code here,
+# e.g. goatcounter = "soham" for soham.goatcounter.com
+goatcounter = "mahos"

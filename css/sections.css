@@ -1,0 +1,287 @@
+/* Research, Teaching and Talks: the shared section layout, then each kind of entry. */
+.section {
+    display: grid;
+    gap: var(--space-l);
+    padding-block: var(--space-xl);
+    border-top: 1px solid var(--rule);
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--brown);
+}
+
+.section-header h2 {
+    position: relative;
+    margin: 0;
+    font-size: var(--h2);
+}
+
+/* Underline that extends under the section title on hover */
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--brown-dark);
+    transition: width 0.5s ease;
+}
+
+.section-header:hover h2::after {
+    width: 100%;
+}
+
+.section-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+}
+
+.section-body {
+    min-width: 0;
+    max-width: var(--prose-width);
+}
+
+.section-body > p {
+    margin: 0 0 var(--space-m);
+}
+
+.section-body > :last-child {
+    margin-bottom: 0;
+}
+
+/* Links inside running text and author lists get a soft underline */
+.section-body > p a,
+.pub-authors a {
+    text-decoration: underline;
+    text-decoration-color: var(--peach-deep);
+}
+
+.section-body > p a:hover,
+.pub-authors a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* Wide screens: your original layout, with the heading in its own column on the left */
+@media (min-width: 56rem) {
+    .section {
+        grid-template-columns: 11rem minmax(0, 1fr);
+        gap: var(--space-xl);
+        padding-block: var(--space-2xl);
+    }
+
+    .section-header {
+        position: sticky;
+        top: calc(var(--nav-height) + var(--space-xl));
+        align-self: start;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-m);
+        text-align: center;
+    }
+
+    .section-icon {
+        width: 2.6rem;
+        height: 2.6rem;
+    }
+}
+
+/* Numbered lists used by all three sections */
+.pub-list,
+.talk-list,
+.course-list {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.pub-list > li,
+.talk-list > li,
+.course-list > li {
+    padding-left: 0.3rem;
+}
+
+.pub-list > li + li,
+.talk-list > li + li,
+.course-list > li + li {
+    margin-top: var(--space-l);
+}
+
+.pub-list > li::marker,
+.talk-list > li::marker,
+.course-list > li::marker {
+    color: var(--brown);
+    font-weight: 600;
+}
+
+.pub p,
+.talk p,
+.course p {
+    margin: 0;
+}
+
+.sep {
+    margin-inline: 0.45em;
+    color: var(--peach-deep);
+}
+
+.venue {
+    color: var(--muted);
+    font-style: italic;
+}
+
+/* Research: publication entries */
+.pub-group + .pub-group {
+    margin-top: var(--space-xl);
+}
+
+.pub-group-title {
+    position: relative;
+    width: fit-content;
+    margin: 0 0 var(--space-m);
+    color: var(--brown-dark);
+    font-size: var(--h3);
+}
+
+/* Underline that extends under "Publications" / "Preprints" on hover */
+.pub-group-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--brown-dark);
+    transition: width 0.3s ease;
+}
+
+.pub-group-title:hover::after {
+    width: 100%;
+}
+
+.pub-title {
+    color: var(--brown);
+    font-size: 1.1em;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.pub-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pub-title a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--peach-deep);
+}
+
+.pub-year {
+    font-weight: 400;
+}
+
+.pub .pub-authors {
+    margin-top: var(--space-xs);
+    line-height: 1.4;
+}
+
+.pub-authors .me {
+    font-weight: 700;
+}
+
+.pub-venue {
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.pub .pub-links,
+.talk .talk-links {
+    margin-top: 0.2rem;
+    font-size: var(--small);
+}
+
+.pub-links a,
+.talk-links a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pub-links a:hover,
+.talk-links a:hover {
+    text-decoration: underline;
+}
+
+.pub-id {
+    color: var(--accent-text);
+    font-style: italic;
+}
+
+.pub-group .pub-note {
+    margin: var(--space-m) 0 0;
+    color: var(--muted);
+    font-size: var(--small);
+}
+
+/* Talks */
+.talk-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0 var(--space-m);
+}
+
+.talk-title {
+    color: var(--brown);
+    font-size: 1.0625em;
+}
+
+.talk-date {
+    color: var(--muted);
+    font-size: var(--small);
+    white-space: nowrap;
+}
+
+.talk .talk-head + p {
+    margin-top: var(--space-xs);
+}
+
+.talk-venues {
+    margin: var(--space-xs) 0 0;
+    padding-left: 1.3rem;
+}
+
+/* Teaching */
+.course .detail {
+    color: var(--muted);
+}
+
+/* Phones: tighter spacing between sections and entries, so there is less to scroll */
+@media (max-width: 40rem) {
+    .section {
+        gap: var(--space-m);
+        padding-block: 2rem;
+    }
+
+    .pub-list,
+    .talk-list,
+    .course-list {
+        padding-left: 1.25rem;
+    }
+
+    .pub-list > li + li,
+    .talk-list > li + li,
+    .course-list > li + li {
+        margin-top: 1.1rem;
+    }
+
+    .pub-group + .pub-group {
+        margin-top: 1.75rem;
+    }
+}

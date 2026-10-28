@@ -1,0 +1,81 @@
+/* Motion: the logo animation, smooth scrolling, and switching motion off for people who ask for that. */
+
+/* The "forming" logo: 22 frames in one image strip, played while the logo is hovered */
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../images/logo-sprite.webp") 0 0 / 2200% 100% no-repeat;
+    opacity: 0;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .brand-logo:hover::after {
+        opacity: 1;
+        animation: logo-forming 2.2s steps(21) forwards;
+    }
+}
+
+@keyframes logo-forming {
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/* Section icons (microscope, book, board) wiggle while their heading is hovered — computers only */
+@media (hover: hover) and (min-width: 56rem) and (prefers-reduced-motion: no-preference) {
+    .section-header:hover .section-icon {
+        animation: icon-wiggle 2s ease-in-out infinite;
+    }
+}
+
+@keyframes icon-wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(6deg);
+    }
+}
+
+/* The downward arrow bounces when hovered */
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-arrow:hover .icon,
+    .scroll-arrow:focus-visible .icon {
+        animation: bounce 1.5s ease-in-out;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* System setting "Reduce motion": no animations or transitions anywhere */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

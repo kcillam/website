@@ -1,0 +1,15 @@
+# Courses you were a teaching assistant for, newest first.
+#
+# To add one, copy a [[course]] block to the top and edit it. Then run:  python3 build.py
+#
+# Fields
+#   term         required, e.g. "Fall 2024".
+#   course       required.
+#   instructor   optional.
+#   institution  optional.
+
+[[course]]
+term = "Fall 2024"
+course = "STAT 5350/7110 - Forecasting Methods for Management"
+instructor = "Professor Robert Stine"
+institution = "The Wharton School, University of Pennsylvania"

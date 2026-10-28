@@ -1,0 +1,82 @@
+/* Footer: contact icons and copyright line. */
+.site-footer {
+    max-width: var(--page-width);
+    margin: var(--space-l) auto 0;
+    padding: var(--space-l) var(--gutter) var(--space-xl);
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: var(--space-m) 0 0;
+}
+
+.site-footer a {
+    color: var(--muted);
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-links a {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    border: 2px solid var(--light-gray);
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--brown);
+    font-size: 1.25rem;
+    transition: transform var(--ease), background-color var(--ease), border-color var(--ease);
+}
+
+/* Visit counter: a small pill at the very bottom that fades in once the number arrives */
+.site-footer .visits {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: var(--space-m) 0 0;
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--peach-deep);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--muted);
+    font-size: 0.8125rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.site-footer .visits.is-shown {
+    opacity: 1;
+    transform: none;
+}
+
+.visits .icon {
+    font-size: 1rem;
+    color: var(--brown-light);
+}
+
+.visits-number {
+    color: var(--brown);
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: var(--brown-dark);
+    background: var(--yellow);
+    border-color: var(--peach-deep);
+    transform: scale(1.1);
+}

@@ -1,0 +1,227 @@
+/* Home: photo, contact links and the About text. */
+.home {
+    display: grid;
+    gap: var(--space-l);
+    padding-block: var(--space-xl);
+}
+
+.home-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-m);
+}
+
+.profile-photo {
+    width: clamp(9.5rem, 42vw, 15.5rem);
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 3px var(--white), 0 0 0 7px var(--peach);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* The photo comes forward slightly with a gold ring on hover */
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 5px var(--white), 0 0 0 9px var(--gold);
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-m);
+    margin: var(--space-s) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-link {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 3px solid var(--light-gray);
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--brown);
+    font-size: 1.6rem;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+    color: var(--brown-dark);
+    background: var(--yellow);
+    border-color: var(--peach-deep);
+    transform: scale(1.1);
+}
+
+.email {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.email a {
+    color: var(--brown);
+    text-decoration: none;
+}
+
+.email a:hover {
+    color: var(--brown-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--peach-deep);
+}
+
+.about {
+    max-width: var(--prose-width);
+}
+
+.about-header {
+    width: fit-content;
+    max-width: 100%;
+    margin-bottom: var(--space-l);
+}
+
+/* Accent bar under the name; it extends across the name on hover */
+.about-header::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 4px;
+    margin-top: 0.6rem;
+    border-radius: 2px;
+    background: var(--brown-dark);
+    transition: width 0.3s ease;
+}
+
+.about-header:hover::after {
+    width: 100%;
+}
+
+.about-title {
+    margin: 0;
+    font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+}
+
+/* Name above "About Me": visible on phones only, where the navigation bar has no room for it */
+.phone-name {
+    margin: 0 0 var(--space-m);
+    color: var(--brown-dark);
+    font-size: var(--h1);
+    font-weight: 700;
+    text-align: center;
+}
+
+@media (min-width: 40.01rem) {
+    .phone-name {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+}
+
+.about p {
+    margin: 0 0 0.85rem;
+}
+
+.about ul {
+    margin: 0 0 0.85rem;
+    padding-left: 1.3rem;
+}
+
+.about li + li {
+    margin-top: 0.15rem;
+}
+
+.about a {
+    text-decoration: underline;
+    text-decoration-color: var(--peach-deep);
+}
+
+.about a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* Arrow to the Research section, at the bottom of the first screen */
+.scroll-arrow {
+    display: none;
+}
+
+/* Phones and tablets: photo above the text, name centred */
+@media (max-width: 55.99rem) {
+    .about {
+        margin-inline: auto;
+    }
+
+    .about-header {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .about-header::after {
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 47.99rem) {
+    .home {
+        gap: 1.25rem;
+        padding-block: 1.75rem;
+    }
+
+    .about-header {
+        margin-bottom: var(--space-m);
+    }
+
+    .social-link {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* Laptops and wider: photo on the left, About on the right, kept close together and centred
+   as one block, filling the first screen */
+@media (min-width: 56rem) {
+    .home {
+        grid-template-columns: auto minmax(0, 44rem);
+        grid-template-rows: 1fr auto;
+        justify-content: center;
+        align-items: center;
+        column-gap: clamp(2.5rem, 4vw, 4rem);
+        row-gap: var(--space-s);
+        min-height: calc(100vh - var(--nav-height));
+        min-height: calc(100svh - var(--nav-height));
+        padding-block: var(--space-xl) var(--space-s);
+    }
+
+    .profile-photo {
+        width: clamp(15rem, 24vw, 20rem);
+    }
+
+    .scroll-arrow {
+        display: grid;
+        place-items: center;
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        color: var(--brown-dark);
+        font-size: 2.6rem;
+        text-decoration: none;
+    }
+
+    .scroll-arrow:hover {
+        color: var(--brown);
+    }
+}

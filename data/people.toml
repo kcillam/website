@@ -1,0 +1,7 @@
+# Homepages of coauthors. Any author whose name matches a line below becomes a link
+# in the publication list; everyone else is shown as plain text.
+# The name must be spelled exactly as in publications.toml.
+
+"Edgar Dobriban" = "https://statistics.wharton.upenn.edu/profile/dobriban/"
+"Eric Tchetgen Tchetgen" = "https://statistics.wharton.upenn.edu/profile/ett/"
+"Arun Kumar Kuchibhotla" = "https://arun-kuchibhotla.github.io/"

@@ -1,0 +1,39 @@
+# Talks shown on the website, newest first.
+#
+# To add a talk, copy one [[talk]] block to the top and edit it. Then run:  python3 build.py
+#
+# Fields
+#   title        required.
+#   date         required. Shown as written, e.g. "Jul ’23".
+#   description  optional. Simple HTML is allowed, e.g. <em>…</em>
+#   venue        optional. One place, shown in italics.
+#   venues       optional. Several places, shown as a numbered list.
+#   links        optional. Label = "address" pairs, e.g. Slides, Abstract, Video.
+
+[[talk]]
+title = "Improved Hierarchical Conformal Prediction"
+date = "Dec ’25"
+description = "Presented at the <em>IMS International Conference on Statistics and Data Science (ICSDS)</em>."
+venue = "Seville, Spain"
+links = { Slides = "https://drive.google.com/file/d/1OoUmpGyPjy65OtNtLKYxwWlsG2wymfol/view", Paper = "https://arxiv.org/abs/2608.15500" }
+
+[[talk]]
+title = "Inference for Monotone Regression"
+date = "Jul ’23"
+description = "Presented at the Departments of Statistics in the following Universities:"
+venues = ["Carnegie Mellon University", "University of Pennsylvania", "Columbia University"]
+links = { Slides = "https://drive.google.com/file/d/1jPgCpmP3Hz4B03758TF4sm-ZuwCZwWBf/view", Abstract = "https://drive.google.com/file/d/1qnCbHUj5sxGFsLxFraxLahcD9chFWSXo/view" }
+
+[[talk]]
+title = "D. Basu Gold Medal Award"
+date = "Dec ’22"
+description = "Presented a talk on <em>Uniform Manifold Approximation &amp; Projection</em>, as a dimension reduction tool."
+venue = "Indian Statistical Institute, Kolkata"
+links = { Slides = "https://drive.google.com/file/d/1kObLQzkstYXkyPL43njxaeip6WV-nNNj/view", Abstract = "https://drive.google.com/file/d/1DBuDCd_5kdgp6GV4TjaEp1yHnzzXfsvl/view" }
+
+[[talk]]
+title = "Symposium on Combinatorics & Probability"
+date = "Apr ’22"
+description = "Presented a joint talk on the Lovász Local Lemma and the Moser-Tardos Algorithm."
+venue = "Indian Institute of Science, Bangalore"
+links = { Slides = "https://drive.google.com/file/d/1RZNs5N90dJ_mLQRCfB8FHN83dc9obOm4/view", Video = "https://www.youtube.com/watch?v=E12oH_6mWOU" }

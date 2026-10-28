@@ -1,0 +1,358 @@
+/* Navigation bar (logo, name, links) and the search panel that opens beneath it. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--peach);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav {
+    max-width: var(--page-width);
+    min-height: var(--nav-height);
+    margin-inline: auto;
+    padding: var(--space-m) var(--gutter);
+    display: flex;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-right: auto;
+    color: var(--brown-dark);
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand-name:hover {
+    color: var(--brown);
+}
+
+.brand-logo {
+    position: relative;
+    flex: none;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f4e9d7;
+    border: 3px solid var(--brown-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Pronunciation box under the name, shown on hover or keyboard focus */
+.brand-name {
+    position: relative;
+}
+
+.brand-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background: var(--yellow);
+    color: var(--brown-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* The name and the logo react separately: hovering the name shows the pronunciation,
+   hovering the logo plays its animation (see animations.css) */
+.brand-name:hover .brand-tooltip,
+.brand:focus-visible .brand-tooltip {
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+.brand-logo:hover {
+    border-color: #d7a592;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.nav-links {
+    flex: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+    margin: 0 0 0 var(--space-s);
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    color: var(--brown);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--brown-dark);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-links .icon {
+    font-size: 1.2rem;
+}
+
+.search-toggle {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-left: var(--space-s);
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--brown);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.search-toggle:hover,
+.search-toggle[aria-expanded="true"] {
+    color: var(--brown-dark);
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* The button shows a magnifying glass, and a cross while the search is open */
+.search-toggle .icon-close,
+.search-toggle[aria-expanded="true"] .icon-open {
+    display: none;
+}
+
+.search-toggle[aria-expanded="true"] .icon-close {
+    display: block;
+}
+
+/* Search field: closed it takes no space; it slides open to the right of the button,
+   pushing the button left while Home, Research… stay where they are.
+   It shrinks if the bar is narrow. */
+.search {
+    flex: 0 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    width: 0;
+    height: 2.6rem;
+    overflow: hidden;
+    border: 0 solid var(--brown);
+    border-radius: 8px;
+    background: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    transition: width 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.nav.search-open .search {
+    width: 20rem;
+    margin-left: var(--space-xs);
+    border-width: 1px;
+    opacity: 1;
+    visibility: visible;
+    transition: width 0.3s ease, opacity 0.3s ease, visibility 0s;
+}
+
+.search input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    padding: 0 0.4rem 0 0.75rem;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--brown-dark);
+    font: inherit;
+    font-size: 1rem; /* 16px stops iPhones zooming into the field */
+}
+
+/* Hide the browser's own blue clear button; the close button next to the field does that job */
+.search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search:focus-within {
+    outline: 3px solid var(--brown-light);
+    outline-offset: 1px;
+}
+
+.search-count {
+    flex: none;
+    padding-inline: 0.25rem;
+    color: var(--muted);
+    font-size: 0.8125rem;
+    white-space: nowrap;
+}
+
+.search button {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--brown);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background: var(--yellow);
+}
+
+.search button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* While searching on medium screens, the link icons step aside so the field has room */
+@media (max-width: 80rem) {
+    .nav.search-open .nav-links .icon {
+        display: none;
+    }
+
+    .nav.search-open .nav-links {
+        gap: var(--space-xs);
+    }
+}
+
+/* …and on small tablets the name steps aside too (the logo stays) */
+@media (max-width: 56rem) {
+    .nav.search-open .brand-name {
+        display: none;
+    }
+}
+
+::highlight(search) {
+    background-color: var(--yellow);
+    color: var(--brown-dark);
+}
+
+::highlight(search-current) {
+    background-color: var(--gold);
+    color: var(--brown-dark);
+}
+
+/* Tablets: icons give way to text so everything fits on one line */
+@media (max-width: 60rem) {
+    .brand {
+        gap: var(--space-m);
+        font-size: 1.45rem;
+    }
+
+    .nav-links {
+        gap: var(--space-xs);
+    }
+
+    .nav-links .icon {
+        display: none;
+    }
+}
+
+/* Small tablets */
+@media (max-width: 47.99rem) {
+    .nav {
+        padding-block: 0.6rem;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+
+    .brand-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+/* Phones: the name moves into the page heading; the bar keeps logo, links and search */
+@media (max-width: 40rem) {
+    .nav {
+        gap: var(--space-xs);
+        padding-block: 0.4rem;
+    }
+
+    .brand-name,
+    .nav-home {
+        display: none;
+    }
+
+    .brand-logo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .nav-links {
+        order: 1;
+        gap: 0;
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        padding-inline: 0.55rem;
+        font-size: 1.05rem;
+    }
+
+    /* Search button at the right end; the open field drops down just below the bar,
+       so the links stay visible */
+    .nav {
+        position: relative;
+    }
+
+    .search-toggle {
+        order: 2;
+        margin-left: 0;
+    }
+
+    .search {
+        position: absolute;
+        top: 100%;
+        left: var(--gutter);
+        right: var(--gutter);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+        transform: translateY(-6px);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+    }
+
+    .nav.search-open .search {
+        width: auto;
+        margin: 0.35rem 0 0;
+        transform: none;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s;
+    }
+}
+
+@media (max-width: 22.5rem) {
+    .nav-links a {
+        padding-inline: 0.4rem;
+        font-size: 1rem;
+    }
+}

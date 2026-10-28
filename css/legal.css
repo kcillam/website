@@ -1,0 +1,28 @@
+/* Copyright & privacy page. */
+.legal {
+    max-width: 44rem;
+    padding-block: var(--space-xl);
+}
+
+.legal h1 {
+    margin: 0 0 var(--space-l);
+    font-size: var(--h2);
+}
+
+.legal h2 {
+    margin: var(--space-xl) 0 var(--space-s);
+    font-size: var(--h3);
+}
+
+.legal p {
+    margin: 0 0 var(--space-m);
+}
+
+.legal a {
+    text-decoration: underline;
+    text-decoration-color: var(--peach-deep);
+}
+
+.legal a:hover {
+    text-decoration-color: currentColor;
+}

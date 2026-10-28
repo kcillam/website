@@ -1,0 +1,52 @@
+/* Design tokens: colours, type sizes, spacing. Change a value here and it updates everywhere. */
+:root {
+    /* Palette */
+    --peach: #f4d1c1;          /* navigation bar */
+    --peach-deep: #d9b1a3;     /* underlines, borders */
+    --yellow: #fbe8b5;         /* hover fills, search highlight */
+    --gold: #ffd700;           /* photo ring on hover, current search match */
+    --brown-light: #a17350;    /* borders and icons only (too light for small text) */
+    --brown: #724b2d;          /* headings, titles, links */
+    --brown-dark: #523227;     /* body text */
+    --muted: #6b574c;          /* secondary text: venues, dates */
+    --accent-text: #8a5f40;    /* arXiv numbers */
+    --rule: rgba(82, 50, 39, 0.22);  /* divider lines */
+    --white: #fff;
+    --light-gray: #e9e8e8;
+
+    /* Typography */
+    --font: "Crimson Pro", Georgia, "Times New Roman", serif;
+    --text: clamp(1.125rem, 1.06rem + 0.25vw, 1.21875rem);  /* 18px on phones → 19.5px on computers (Crimson Pro runs small) */
+    --small: 0.92em;                                         /* dates, links rows, notes: a step below the text around them */
+    --h1: clamp(1.75rem, 1.4rem + 1.5vw, 2.6rem);
+    --h2: clamp(1.35rem, 1.1rem + 1vw, 1.85rem);
+    --h3: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
+
+    /* Spacing and layout */
+    --space-xs: 0.25rem;
+    --space-s: 0.5rem;
+    --space-m: 1rem;
+    --space-l: 1.5rem;
+    --space-xl: 2.5rem;
+    --space-2xl: 4rem;
+    --page-width: 90rem;
+    --prose-width: 50rem;
+    --gutter: 1.1rem;
+    --nav-height: 3.6rem;
+    --radius: 10px;
+    --ease: 0.2s ease;
+}
+
+@media (min-width: 40rem) {
+    :root {
+        --nav-height: 4.5rem;
+    }
+}
+
+/* Tablets and computers: wider side margins (4rem on laptops, as originally) and the taller navigation bar */
+@media (min-width: 48rem) {
+    :root {
+        --gutter: clamp(1.5rem, 5vw, 4rem);
+        --nav-height: 5.5rem;
+    }
+}

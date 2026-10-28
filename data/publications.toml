@@ -1,0 +1,61 @@
+# Research entries shown on the website.
+#
+# To add a paper, copy one [[paper]] block, paste it at the top of its section
+# (newest first) and edit the values. Then run:  python3 build.py
+#
+# Fields
+#   title     required. Simple HTML is allowed, e.g. Top-<i>k</i>
+#   authors   required. Full names in order. Put * after a name for equal
+#             contribution, e.g. "Soham Mallick*". Your own name is bolded and
+#             coauthors listed in people.toml are linked automatically.
+#   year      required.
+#   section   required. One of the ids in `sections` below.
+#   venue     optional. Journal or conference, shown in italics.
+#   arxiv     optional. The arXiv number, shown as "arXiv:2505.19371".
+#   links     optional. Label = "address" pairs, shown in this order.
+#             The title links to the first one.
+
+# Sections appear in this order. Empty sections are not shown.
+sections = [
+  { id = "paper", title = "Publications" },
+  { id = "preprint", title = "Preprints/Submitted Articles" },
+  { id = "project", title = "Projects" },
+]
+
+# ---- Publications --------------------------------------------------------------
+
+[[paper]]
+title = "Statistical Early Stopping for Reasoning Models"
+authors = ["Yangxinyu Xie", "Tao Wang", "Soham Mallick", "Yan Sun", "Georgy Noarov", "Mengxin Yu", "Tanwi Mallick", "Edgar Dobriban"]
+year = 2026
+section = "paper"
+venue = "Proceedings of the 43rd International Conference on Machine Learning (ICML 2026)"
+arxiv = "2602.13935"
+links = { Proceedings = "https://proceedings.mlr.press/v306/xie26z.html", arXiv = "https://arxiv.org/abs/2602.13935" }
+
+[[paper]]
+title = "Foundations of Top-<i>k</i> Decoding for Language Models"
+authors = ["Georgy Noarov*", "Soham Mallick*", "Tao Wang*", "Sunay Joshi", "Yan Sun", "Yangxinyu Xie", "Mengxin Yu", "Edgar Dobriban"]
+year = 2025
+section = "paper"
+venue = "Advances in Neural Information Processing Systems 38 (NeurIPS 2025)"
+arxiv = "2505.19371"
+links = { Proceedings = "https://proceedings.nips.cc/paper_files/paper/2025/hash/a96d4fda3017f1773b261a52a3efc8dd-Abstract-Conference.html", arXiv = "https://arxiv.org/abs/2505.19371" }
+
+# ---- Preprints / submitted articles ------------------------------------------
+
+[[paper]]
+title = "Generalized Hierarchical Conformal Prediction"
+authors = ["Soham Mallick", "Eric Tchetgen Tchetgen", "Edgar Dobriban", "Yonghoon Lee"]
+year = 2026
+section = "preprint"
+arxiv = "2608.15500"
+links = { arXiv = "https://arxiv.org/abs/2608.15500", Code = "https://github.com/soham-penn/hierarchical_CP" }
+
+[[paper]]
+title = "Generalized Asymptotic Limit Theory and Inference for Isotonic Regression"
+authors = ["Soham Mallick", "Siddhaarth Sarkar", "Arun Kumar Kuchibhotla"]
+year = 2023
+section = "preprint"
+arxiv = "2310.20058"
+links = { arXiv = "https://arxiv.org/abs/2310.20058" }
